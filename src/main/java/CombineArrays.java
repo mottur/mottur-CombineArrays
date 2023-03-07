@@ -8,7 +8,14 @@ public class CombineArrays {
      * @return an array containing the contents of arr1 followed by the contents of arr2.
      */
     public int[] combine(int[] arr1, int[] arr2){
-
-        return null;
+        int[] combo = new int[arr1.length + arr2.length];
+        for(int i = 0; i < combo.length; i++) {
+            if (i < arr1.length) {
+                combo[i] = arr1[i];
+            } else {
+                combo[i] = arr2[i-arr1.length];
+            }
+        }
+        return combo;
     }
 }
